@@ -1,0 +1,22 @@
+# First time create a project 
+git clone url
+
+# Else 
+git pull origin master
+
+# Crate dev folder and go to the developer folder
+git checkout -b dev
+
+# If you want to delete a branch
+git branch -D dev
+
+# Make the change from now, then
+git add .
+git commit -m "notes"
+
+# ATTENTION: Push to developement enviroment
+git push origin dev
+
+# Then go to github web to create pull request
+
+
