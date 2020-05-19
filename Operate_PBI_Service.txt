@@ -1,0 +1,31 @@
+# Export PBI reports
+Connect-PowerBIServiceAccount   
+
+Export-PowerBIReport -Id e1b2f91c-0fb6-46e6-be31-6b71b0cca9c5 -OutFile C:\Report\SampleMyWS.pbix
+
+Export-PowerBIReport -Id c77c9126-0864-4e5d-bf02-86f8ed8be649 -OutFile C:\Report\SampleBlogWS.pbix -WorkspaceId 4885ac3e-9ba8-4a34-80ba-2d74a89c749d
+
+
+# Add new PBI Workspace
+New-PowerBIWorkspace -Name "New Workspace"
+
+Set-PowerBIWorkspace -Scope Organization -Id "ab1d0719-5935-4745-8ef0-90519d18bfef" -Name "Power BI WS with PS" -Description "Test WS for PS"
+
+# Publish report to workspace
+New-PowerBIReport -Path C:\Report\SamplePBIREport.pbix -Name 'Sample Report' -WorkspaceId 4885ac3e-9ba8-4a34-80ba-2d74a89c749d
+
+New-PowerBIReport -Path C:\Report\SamplePBIREport.pbix -Name 'New Report' -WorkspaceId 4885ac3e-9ba8-4a34-80ba-2d74a89c749d
+
+# Command
+Add-PowerBIWorkspaceUser -Scope Organization -Id ef2d7e7b-9f0b-4926-9861-e4d3738f84ce -UserEmailAddress AdeleV@dshah27.onmicrosoft.com -AccessRight Admin
+
+Remove-PowerBIWorkspaceUser -Scope Organization -Id ef2d7e7b-9f0b-4926-9861-e4d3738f84ce -UserEmailAddress AdeleV@dshah27.onmicrosoft.com
+
+New-PowerBIWorkspace -Name "New Workspace"
+
+Set-PowerBIWorkspace -Scope Organization -Id "ab1d0719-5935-4745-8ef0-90519d18bfef" -Name "Power BI WS with PS" -Description "Test WS for PS"
+
+convertTimeZone(variables('vCreatedDate'),'UTC','India Standard Time')
+
+
+
