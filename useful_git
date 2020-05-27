@@ -1,5 +1,6 @@
-# First time create a project 
-git clone url
+#For a new project in Local Github folder, first cd github folder.
+# Clone the url created before in github: git clone https://github.com/himalayas8848/Realtime_Map.git
+# The cd Realtime_Map folder to work from there.
 
 # Else 
 git pull origin master
